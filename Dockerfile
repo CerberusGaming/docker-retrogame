@@ -32,5 +32,5 @@ COPY entrypoint.sh /usr/src/ogame/entrypoint.sh
 
 EXPOSE 8080/tcp
 
-ENTRYPOINT ['entrypoint.sh']
+ENTRYPOINT ['/usr/src/ogame/entrypoint.sh']
 CMD ['/usr/bin/java', '-Djava.library.path=lib', '-jar', 'server.jar']
