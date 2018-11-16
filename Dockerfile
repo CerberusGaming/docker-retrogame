@@ -28,7 +28,7 @@ RUN rm -rf build/ target/ src/ etc/ battle-engine/ \
 
 VOLUME /usr/src/ogame/config
 	
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh entrypoint.sh
 
 EXPOSE 8080/tcp
 
