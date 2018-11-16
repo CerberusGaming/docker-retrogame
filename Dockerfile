@@ -19,11 +19,11 @@ RUN mvn package \
 	&& mv /usr/src/ogame/target/*.jar /usr/src/ogame/server.jar
 
 RUN mkdir lib \
-	&& mv build\libBattleEngine.so lib \
-	&& mv config\application.properties .application.properties.default
+	&& mv build/libBattleEngine.so lib \
+	&& mv config/application.properties .application.properties.default
 
 RUN rm -rf build/ target/ src/ etc/ battle-engine/ \
-	&& apt-get purge git maven gcc build-essential cmake \
+	&& apt-get remove --purge -y git maven gcc build-essential cmake \
 	&& apt-get remove --purge -y $BUILD_PACKAGES $(apt-mark showauto) \
 	&& rm -rf /var/lib/apt/lists/*
 
