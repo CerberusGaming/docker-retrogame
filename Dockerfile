@@ -23,8 +23,8 @@ RUN mkdir lib \
 	&& mv config/application.properties .application.properties.default
 
 RUN rm -rf build/ target/ src/ etc/ battle-engine/ \
-	&& apt-get remove --purge -y git maven gcc build-essential cmake \
-	&& apt-get remove --purge -y $BUILD_PACKAGES $(apt-mark showauto) \
+	&& apt-get remove --purge -y --allow-remove-essential git maven gcc build-essential cmake \
+	&& apt-get remove --purge -y --allow-remove-essential $BUILD_PACKAGES $(apt-mark showauto) \
 	&& rm -rf /var/lib/apt/lists/*
 
 VOLUME /usr/src/ogame/config
