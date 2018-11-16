@@ -15,7 +15,8 @@ RUN mkdir build \
 
 RUN ls -lah
 	
-RUN mvn package \
+RUN mvn clean \
+    && mvn package \
     && mv /usr/src/ogame/target/*.jar /usr/src/ogame/server.jar
 
 RUN mkdir lib \
