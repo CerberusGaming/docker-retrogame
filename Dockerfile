@@ -11,7 +11,7 @@ RUN mkdir build \
     && cd build \
 	&& cmake -DCMAKE_BUILD_TYPE=Release ../battle-engine \
 	&& make \
-	&& cd /usr/src/ogame \
+	&& cd /usr/src/ogame
 
 RUN ls -lah
 	
