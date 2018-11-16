@@ -28,9 +28,10 @@ RUN rm -rf build/ target/ src/ etc/ battle-engine/ \
 
 VOLUME /usr/src/ogame/config
 	
-COPY entrypoint.sh entrypoint.sh
+COPY entrypoint.sh /usr/src/ogame/entrypoint.sh
+RUN chmod 755 /usr/src/ogame/entrypoint.sh
 
 EXPOSE 8080/tcp
 
-ENTRYPOINT ['entrypoint.sh']
-CMD ['/usr/bin/java', '-Djava.library.path=lib', '-jar', 'server.jar']
+ENTRYPOINT ["/usr/src/ogame/entrypoint.sh"]
+CMD ["/usr/bin/java", "-Djava.library.path=lib", "-jar", "server.jar"]
