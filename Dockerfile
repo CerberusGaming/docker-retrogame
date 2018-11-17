@@ -1,4 +1,4 @@
-FROM openjdk:latest
+FROM openjdk:8
 
 RUN apt-get update \
     && apt-get -y install git maven gcc build-essential cmake
